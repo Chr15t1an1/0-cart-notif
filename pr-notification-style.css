@@ -71,31 +71,6 @@
   line-height: 48px;
   font-weight: 700;
 }
-
-
-.section-modal .overlay .modal .title svg {
-  position: absolute;
-right: 0px;
-margin: 3%;
--webkit-box-shadow: 0px 23px 30px -20px rgba(0, 0, 0, 0.4);
-        box-shadow: 0px 23px 30px -20px rgba(0, 0, 0, 0.4);
--webkit-transition: all 200ms ease-in-out;
-transition: all 200ms ease-in-out;
-
-}
-
-
-.section-modal .overlay .modal .title svg:hover {
-  cursor: pointer;
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
-  -webkit-box-shadow: 0px 27px 30px -20px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 27px 30px -20px rgba(0, 0, 0, 0.4);
-}
-
-
-
-
 .section-modal .overlay .modal .body {
   background: white;
   border-radius: 0px 0px 4px 4px;
@@ -135,31 +110,54 @@ transition: all 200ms ease-in-out;
   display: -ms-flexbox;
   display: flex;
   -webkit-animation: overlayAnim 5s ease-in-out forwards;
-         animation: overlayAnim 5s ease-in-out forwards;
-
+          animation: overlayAnim 5s ease-in-out forwards;
 }
 .section-modal .overlay.is-active .modal {
   -webkit-animation: modalAnim 5s ease-in-out forwards;
           animation: modalAnim 5s ease-in-out forwards;
 }
 
-
-/* .section-modal .overlay.is-active .modal.fade { */
-
-.section-modal .overlay.is-active .modal.fade {
-  -webkit-animation: modalAnimOut 5s ease-in-out forwards;
-          animation: modalAnimOut 5s ease-in-out forwards;
-}
-
-
-
-
-@keyframes overlayAnim {
+@-webkit-keyframes overlayAnim {
   0%, 100% {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, 0);
+  }
+  15%, 85% {
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
+@keyframes overlayAnim {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  15%, 85% {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+@-webkit-keyframes modalAnim {
+  0% {
+    -webkit-transform: translateX(-200%) rotate(-90deg);
+            transform: translateX(-200%) rotate(-90deg);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateX(4%) rotate(4deg);
+            transform: translateX(4%) rotate(4deg);
+  }
+  15%, 85% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: translateX(-4%) rotate(-4deg);
+            transform: translateX(-4%) rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: translateX(200%) rotate(90deg);
+            transform: translateX(200%) rotate(90deg);
+  }
+}
 @keyframes modalAnim {
   0% {
     -webkit-transform: translateX(-200%) rotate(-90deg);
@@ -170,48 +168,20 @@ transition: all 200ms ease-in-out;
     -webkit-transform: translateX(4%) rotate(4deg);
             transform: translateX(4%) rotate(4deg);
   }
-
-   /* 15%, 100% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    opacity: 1;
-  } */
-
-  15%, 100% {
+  15%, 85% {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
     opacity: 1;
   }
-  /* 90% {
-    -webkit-transform: translateX(-4%) rotate(-4deg);
-            transform: translateX(-4%) rotate(-4deg);
-  } */
-  /* 100% {
-    -webkit-transform: translateX(200%) rotate(90deg);
-            transform: translateX(200%) rotate(90deg);
-  } */
-}
-
-
-
-
-
-
-@keyframes modalAnimOut {
-  0%, 30% {
+  90% {
     -webkit-transform: translateX(-4%) rotate(-4deg);
             transform: translateX(-4%) rotate(-4deg);
   }
-   30%, 100% {
+  100% {
     -webkit-transform: translateX(200%) rotate(90deg);
             transform: translateX(200%) rotate(90deg);
   }
 }
-
-
-
-
-
 
 
 

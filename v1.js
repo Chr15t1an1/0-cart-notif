@@ -74,8 +74,8 @@ $( document ).ready(function() {
               ///if item-price is == 0 AND quantity is >1{
               //fire notification.
             cartObject.items.forEach(function(element) {
-                  var product_Price =  element.items.price;
-                  var product_quantity =  element.items.quantity;
+                  var product_Price =  element.price;
+                  var product_quantity =  element.quantity;
                   if (product_Price == 0 && product_quantity > 1) {
                     // Fire off the notifs
                     alert("Notif");
