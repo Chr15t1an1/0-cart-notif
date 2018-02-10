@@ -1355,7 +1355,13 @@ var xText = $('.selector-wrapper select').find('option:selected').text();
 
 
 $('.section-modal .profile').click(function(){
+
+  $('.section-modal').css('pointer-events','all');
   $('.overlay').addClass('is-active');
+
+
+
+
   // setTimeout(function(){
   //   $('.overlay').removeClass('is-active');
   // }, 5000);
@@ -1363,13 +1369,13 @@ $('.section-modal .profile').click(function(){
 
 
 $('.section-modal .overlay .modal .title svg').click(function(){
-  // $('.overlay').removeClass('is-active');
+  $('.section-modal').css('pointer-events','none');
 $('.modal').addClass('fade');
 
 setTimeout(function(){
   $('.overlay').removeClass('is-active');
   $('.modal').removeClass('fade');
-}, 2000);
+}, 1500);
 
 
 });
