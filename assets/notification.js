@@ -1,3 +1,29 @@
+
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+///////////fireing Notif///////////
+
+// $('#cc__fancy_notification').css('pointer-events','all');
+// $('.overlay').addClass('is-active');
+
+
+
+///////////Closing Notif///////////
+//Close svg X
+$('#cc__fancy_notification .overlay .cc__notif__modal .title svg,#cc__closebutton,#cc__cartbutton').click(function(){
+      $('#cc__fancy_notification').css('pointer-events','none');
+      $('.cc__notif__modal').addClass('fade');
+
+      setTimeout(function(){
+        $('.overlay').removeClass('is-active');
+        $('.cc__notif__modal').removeClass('fade');
+      }, 1500);
+});
+
+});
+
+
 ////cookie managment functions
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -44,10 +70,6 @@ function getUserCart(a) {
 function num_items_inCart(c) {
   c.item_count;
 }
-
-
-
-
 
 // A $( document ).ready() block.
 $( document ).ready(function() {
